@@ -68,9 +68,9 @@ def scrape_category(driver, url, category_name):
             elif href.startswith('tel:'):
                 trainer['contact'] = href.replace('tel:', '').strip()
         
-        trainers_list.append(trainer)
+        category_list.append(trainer)
     
-    df = pd.DataFrame(trainers_list)
+    df = pd.DataFrame(category_list)
     filename = f"{category_name}.csv"
     df.to_csv(filename, index=False)
     
